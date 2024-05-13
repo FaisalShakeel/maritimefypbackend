@@ -1,0 +1,20 @@
+{
+  "name": "maritime",
+  "version": "1.0.0",
+  "description": "backend for maritime",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "muhammadusman",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.9.7",
+    "nodemon": "^3.1.0",
+    "socket.io": "^4.7.5"
+  }
+}

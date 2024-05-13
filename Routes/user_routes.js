@@ -1,0 +1,10 @@
+const express=require('express')
+const { register, login, update, getProfile, follow, getUser } = require('../Controllers/UserController')
+const{verifyJWT}=require('../Middlewares/verifyJWT')
+let userRouter=express.Router()
+userRouter.post("/register",register)
+userRouter.post("/login",login)
+userRouter.get("/getprofile/:Id/:token",verifyJWT,getProfile)
+userRouter.put("/update/:UID",update)
+userRouter.get("/getuser/:UID",getUser)
+module.exports={userRouter}

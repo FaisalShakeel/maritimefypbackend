@@ -1,0 +1,10 @@
+const express = require('express')
+const {getJobs,addJob,deleteJob,getJob, apply, editJob}=require('../Controllers/JobController')
+let jobRouter=express.Router()
+jobRouter.post("/addjob/:UID",addJob)
+jobRouter.get("/getjob/:Id",getJob)
+jobRouter.get("/getjobs",getJobs)
+jobRouter.put("/editjob/:jobId",editJob)
+jobRouter.post("/apply/:jobId/:UID",apply)
+jobRouter.delete("/deletejob/:Id",deleteJob)
+module.exports = {jobRouter}

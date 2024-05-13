@@ -1,0 +1,16 @@
+const express=require('express')
+const { addCourse, deleteCourse, getCourses, getCourse, addLec,  enrollInCourse, updateProgress, editCourse,editLec, getLec, deleteLec } = require('../Controllers/CourseController')
+let courseRouter=express.Router()
+courseRouter.get("/getcourses",getCourses)
+
+courseRouter.post("/addcourse/:UID",addCourse)
+courseRouter.post("/updateprogress/:courseId/:UID/:chapterId",updateProgress)
+courseRouter.get("/getcourse/:Id",getCourse)
+courseRouter.delete("/deletecourse/:courseId",deleteCourse)
+courseRouter.post("/addlec/:courseId",addLec)
+courseRouter.put("/editcourse/:courseId",editCourse)
+courseRouter.get("/getlec/:courseId/:lecId",getLec)
+courseRouter.post("/enroll/:courseId/:UID",enrollInCourse)
+courseRouter.put("/editlec/:courseId/:lecId",editLec)
+courseRouter.delete("/deletelec/:courseId/:lecId",deleteLec)
+module.exports={courseRouter}
